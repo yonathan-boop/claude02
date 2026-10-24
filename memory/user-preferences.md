@@ -56,3 +56,8 @@ metadata:
   - Claude 01 (PC Tester):
     - Menulis catatan di repositori 'claude01'.
     - Membaca 'claude02' secara read-only tanpa hak mengubah isi 'claude02'.
+
+
+- Nomenklatur Singkat:
+  - 02 = Mesin ini (Host Workstation / Produksi).
+  - 01 = Mesin sebelah (Tester / Sandbox).
