@@ -28,3 +28,16 @@ metadata:
 - Reference Library (Passive Read-Only):
   - Path: C:\Users\yonat\OneDrive\Desktop\Opencode\memory
   - Kebijakan: Berstatus referensi pasif (harta karun data/arsip pengetahuan warisan). HANYA dibaca saat ada kebutuhan domain/tugas spesifik. Dilarang menyuntikkan langsung ke core instruction, dilarang mengeksekusi otomatis, dan dilarang mengubah file aslinya.
+
+
+- Primary Tasks & Procedures:
+  1. Absensi Murid:
+     - Master: 'Absensi T.P 2026-2027/' & 'DAFTAR MURID T.P.2026-2027 lengkap.xlsx'.
+     - Kode: S (Sakit), I (Izin), A (Alpa).
+     - Aturan: Read-only sumber, dilarang overwrite file induk. Output dashboard print-ready 3 sheet (Ringkasan + chart anchor kolom A, Harian, Murid) via openpyxl.
+  2. Editing Soal Ujian:
+     - Standar: Kertas F4 (21.59 x 33.02 cm), margin (Atas 0.5, Bawah 0.6, Kiri 1.0, Kanan 1.0 cm), font body Tahoma, indent snap kelipatan 0.65 cm, jarak kolom 1.0 cm.
+     - Invarian: Hanya format murni pada file salinan ('<nama> Edit.docx'). Dilarang mengubah/memotong isi kalimat guru atau menghapus w:numPr.
+  3. Pengolahan Data Sekolah:
+     - Data master C:\RaporServer wajib read-only.
+     - Olah data via staging area (Python / openpyxl / pandas data_only=True), output selalu di berkas baru dengan validasi integritas struktur.
