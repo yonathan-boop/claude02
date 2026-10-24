@@ -52,10 +52,12 @@ Behavioral guidelines to reduce common LLM coding mistakes:
 
 ---
 
-## 4. Task Observer & Skill Evolution
-- Monitor task execution for skill improvement opportunities during any multi-step task or agentic workflow.
-- Capture patterns, user corrections, workflow insights, and methodology worth preserving.
-- Use `task-observer` for pattern discovery and `skill-creator` to formalize, test, and package new skills.
+## 4. Task Observer & Skill Evolution (ALWAYS ACTIVE)
+- **Always Active from Turn 1**: At the start of every session and throughout all interactions, `task-observer` is actively running.
+- **Context Awareness**: Hold open observations from `skill-observations/log.md` and active principles from `skill-observations/cross-cutting-principles.md` in context.
+- **Silent Logging**: When corrections, patterns, tool quirks, or reusable workflows occur, silently append them to `skill-observations/log.md`.
+- **Pre-Logging Mandatory Check**: Always grep highest observation number (`grep -oP '### Observation \K\d+'`) before writing to avoid ID collisions.
+- **Surfacing & Hand-off**: Group and surface observations at session end or handoff. Use `skill-creator` to formalize and test reusable skills.
 
 ---
 
@@ -95,7 +97,7 @@ Behavioral guidelines to reduce common LLM coding mistakes:
 ---
 
 ## 9. Workstation Safety & Workspace Invariants (Claude 02)
-- **Workstation Role**: Host Workstation PC Kerja — AI Generasi ke-4 (All-in Claude Code).
+- **Workstation Role**: Host Workstation PC Kerja â€” AI Generasi ke-4 (All-in Claude Code).
 - **Protected Master Data**:
   - `C:\RaporServer`: Read-Only mutlak. Dilarang mengedit, menimpa, atau menghapus file langsung tanpa izin eksplisit. Selalu gunakan staging area.
 - **Active Workspaces**:

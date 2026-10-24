@@ -8,19 +8,29 @@ metadata:
   modified: 2026-10-24T08:30:00.000Z
 ---
 
+- Name: Yonathan
 - Environment: Windows 11 Home, PowerShell 5.1, Windows Terminal Quake mode (`Win + ~`).
 - Tooling: Does not use VS Code; operates primarily via Windows Terminal and CLI.
 - UX preference: Hates confirmation popups, workspace trust prompts, and permission friction; prefers direct, automated execution.
   - Workspace Trust: Auto-accepted via `hasTrustDialogAccepted: true` in `~/.claude.json` across all workspaces.
   - Quake Mode (`Win + ~`): Windows Terminal default profile bound to Claude Code (`powershell.exe -NoExit -ExecutionPolicy Bypass -Command "claude"`) with `startOnStartup: true`.
+  - File Locking: Diizinkan menutup/kill proses (contoh: `EXCEL.EXE`, Word) otomatis tanpa konfirmasi jika mengunci file yang sedang diedit.
+  - Workspace Cleanliness (Zero Residue): Dilarang meninggalkan file residu/backup (seperti `.bak`, `.tmp`, file duplikat) di folder kerja pengguna. Folder harus selalu bersih dari file sampah.
+- Working Stance: Bertindak sebagai asisten aktif/penjaga (bukan sekadar buruh pasif). Proaktif mengaudit kelengkapan berkas, mendeteksi data yang tercecer/kurang (seperti kasus anak kembar atau berkas yang belum ada), dan mengingatkan pengguna tanpa menunggu ditanya.
 - Language: Indonesian / English.
+
+- Telegram Bot & Mobile Access:
+  - Bot: `@servern8nyn01bot`
+  - User Telegram ID: `5508090479` (@Nggak)
+  - Bridge Daemon: `C:\Users\yonat\telegram-claude\bot.js` (long-polling ke Telegram API, headless `claude.exe -p` runner)
+  - n8n Server: `http://localhost:5678` (port 5678)
 
 - Repository & Sync Role:
   - Repository Resmi: `https://github.com/yonathan-boop/claude02` (Claude 02 - Gen-4 Workstation System).
   - PC ini adalah pemilik / upstream master untuk repositori `claude02`. Seluruh push konfigurasi diarahkan ke `claude02`.
   - Repositori `claude01` (PC lama) tetap terisolasi dan tidak menerima push dari mesin ini.
 
-- Permanent Modes: Caveman terse style, Superpowers framework, Karpathy guidelines, Anti-AI-Slop, dan Curator validation aktif permanen secara default di seluruh sesi tanpa perlu dipanggil manual.
+- Permanent Modes: Caveman terse style, Task Observer (always-on from session start via SessionStart hook), Superpowers framework, Karpathy guidelines, Anti-AI-Slop, dan Curator validation aktif permanen secara default di seluruh sesi tanpa perlu dipanggil manual.
 
 - Workspaces:
   - C:\RaporServer (Data Rapor / Dokumen Sekolah - Protected Read-Only by default).
