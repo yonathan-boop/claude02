@@ -46,3 +46,13 @@ metadata:
 - Dual-Machine Architecture:
   - Claude 02 (PC Ini / Host Workstation): Fokus Kerja & Produksi Nyata (Absensi, Editing Soal, Olah Data Sekolah, Eksekusi PARA). Prioritas pada kestabilan, kecepatan, dan keamanan data fisik.
   - Claude 01 (PC Lain): Sandbox Tester & Fallback Auditor. Digunakan untuk eksperimen pengujian atau analisis alternatif jika ada alur yang membutuhkan uji coba terisolasi.
+
+
+- Cross-Repo Communication Protocol (Claude 01 <-> Claude 02):
+  - Model Komunikasi: Asynchronous Read-Only Bridge via GitHub.
+  - Claude 02 (PC Ini):
+    - Write Authority: HANYA ke repositori 'claude02'. Seluruh catatan untuk Claude 01 ditulis di 'claude02/notes/NOTES_FOR_CLAUDE01.md' lalu di-push.
+    - Read Authority: Membaca repositori 'claude01' secara READ-ONLY mutlak saat butuh hasil uji coba. DILARANG KERAS mengedit atau push ke 'claude01'.
+  - Claude 01 (PC Tester):
+    - Menulis catatan di repositori 'claude01'.
+    - Membaca 'claude02' secara read-only tanpa hak mengubah isi 'claude02'.
