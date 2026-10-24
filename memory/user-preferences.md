@@ -61,3 +61,12 @@ metadata:
 - Nomenklatur Singkat:
   - 02 = Mesin ini (Host Workstation / Produksi).
   - 01 = Mesin sebelah (Tester / Sandbox).
+
+
+- Status Absensi Terkini:
+  - Folder Aktif: 'C:\Users\yonat\OneDrive\Desktop\Absensi T.P 2026-2027'
+  - Tanggal Terakhir Terisi: 22 Oktober 2026 (Kamis).
+  - File Terakhir: 'Absensi 22 Oktober 2026 Thursday 09_00_00.xlsx'
+  - Catatan Terakhir (22 Okt):
+    * PG: Hans Lukas (I), Nathanael Alessandro (S)
+    * TKB1: Richelcia Wijaya (I), Marvino Sebastian (I)
