@@ -33,7 +33,7 @@ metadata:
 - Permanent Modes: Caveman terse style, Task Observer (always-on from session start via SessionStart hook), Superpowers framework, Karpathy guidelines, Anti-AI-Slop, dan Curator validation aktif permanen secara default di seluruh sesi tanpa perlu dipanggil manual.
 
 - Workspaces:
-  - C:\RaporServer (Data Rapor / Dokumen Sekolah - Protected Read-Only by default).
+  - C:\RaporServer (Tempat kerja kita - Data Rapor / Dokumen Sekolah).
   - E:\Data 06\CO(PARA)DE (Project & Workspace Aktif).
 - AI Evolution: User beralih penuh (all-in) ke Claude Code sebagai AI Generasi ke-4, menggantikan iterasi asisten sebelumnya.
 
@@ -51,8 +51,7 @@ metadata:
      - Standar: Kertas F4 (21.59 x 33.02 cm), margin (Atas 0.5, Bawah 0.6, Kiri 1.0, Kanan 1.0 cm), font body Tahoma, indent snap kelipatan 0.65 cm, jarak kolom 1.0 cm.
      - Invarian: Hanya format murni pada file salinan ('<nama> Edit.docx'). Dilarang mengubah/memotong isi kalimat guru atau menghapus w:numPr.
   3. Pengolahan Data Sekolah:
-     - Data master C:\RaporServer wajib read-only.
-     - Olah data via staging area (Python / openpyxl / pandas data_only=True), output selalu di berkas baru dengan validasi integritas struktur.
+     - Olah data langsung di tempat kerja C:\RaporServer dengan cermat dan rapi.
 
 
 - Dual-Machine Architecture:
