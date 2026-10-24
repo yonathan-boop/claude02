@@ -11,6 +11,8 @@ metadata:
 - Environment: Windows 11 Home, PowerShell 5.1, Windows Terminal Quake mode (`Win + ~`).
 - Tooling: Does not use VS Code; operates primarily via Windows Terminal and CLI.
 - UX preference: Hates confirmation popups, workspace trust prompts, and permission friction; prefers direct, automated execution.
+  - Workspace Trust: Auto-accepted via `hasTrustDialogAccepted: true` in `~/.claude.json` across all workspaces.
+  - Quake Mode (`Win + ~`): Windows Terminal default profile bound to Claude Code (`powershell.exe -NoExit -ExecutionPolicy Bypass -Command "claude"`) with `startOnStartup: true`.
 - Language: Indonesian / English.
 
 - Repository & Sync Role:
@@ -71,3 +73,13 @@ metadata:
     * PG: Hans Lukas (I), Nathanael Alessandro (S)
     * TKB1: Richelcia Wijaya (I), Marvino Sebastian (I)
 
+
+
+- Protokol Pergantian Bulan Absensi:
+  - Trigger: Setiap pergantian bulan baru (contoh: masuk 1 November).
+  - Tindakan 02:
+    1. Buat master baru 'Absensi <Bulan Baru> <Tahun>.xlsx'.
+    2. Kosongkan (clear) semua nilai 'S', 'I', 'A' pada seluruh kolom tanggal di semua sheet (Absen PG, TKa, TKB1, TKB2).
+    3. Pertahankan daftar nama murid, urutan rombel, dan rumus rekap.
+    4. Perbarui teks nama bulan pada header (Row 5) dan sesuaikan jumlah kolom tanggal (28/30/31 hari).
+    5. Inisialisasi snapshot bertanggal hari pertama aktif.
