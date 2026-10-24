@@ -41,3 +41,8 @@ metadata:
   3. Pengolahan Data Sekolah:
      - Data master C:\RaporServer wajib read-only.
      - Olah data via staging area (Python / openpyxl / pandas data_only=True), output selalu di berkas baru dengan validasi integritas struktur.
+
+
+- Dual-Machine Architecture:
+  - Claude 02 (PC Ini / Host Workstation): Fokus Kerja & Produksi Nyata (Absensi, Editing Soal, Olah Data Sekolah, Eksekusi PARA). Prioritas pada kestabilan, kecepatan, dan keamanan data fisik.
+  - Claude 01 (PC Lain): Sandbox Tester & Fallback Auditor. Digunakan untuk eksperimen pengujian atau analisis alternatif jika ada alur yang membutuhkan uji coba terisolasi.
