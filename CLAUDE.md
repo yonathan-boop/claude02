@@ -32,6 +32,12 @@ Behavioral guidelines to reduce common LLM coding mistakes:
 - "Fix the bug" → write a test that reproduces it, then make it pass.
 - "Refactor X" → ensure tests pass before and after.
 
+### Aturan Pulpen vs Pensil (Rule Invariants)
+- **Immutable by default**: Aturan tertulis tetap mengikat lintas sesi sampai dicabut eksplisit oleh user.
+- **Conflict before execution**: Wajib periksa benturan aturan sebelum eksekusi tindakan. Jika perintah tugas menabrak aturan permanen, stop dan konfirmasi konflik.
+- **No silent override**: Instruksi tugas sesaat tidak otomatis membatalkan aturan permanen.
+- **Prinsip**: AI boleh mengubah rencana kerja, tetapi DILARANG mengubah atau melanggar aturan yang mengikat.
+
 ---
 
 ## 2. Superpowers Framework
