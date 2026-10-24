@@ -30,7 +30,20 @@ if (Test-Path $MemorySrc) {
     Write-Host "[OK] Memory synced." -ForegroundColor Green
 }
 
-# 5. Git status check & push ke claude02
+# 5. Sync rules
+if (Test-Path "$HomeClaude\rules") {
+    if (-not (Test-Path "$ClaudeDir\rules")) { New-Item -ItemType Directory -Path "$ClaudeDir\rules" -Force | Out-Null }
+    Copy-Item -Path "$HomeClaude\rules\*" -Destination "$ClaudeDir\rules" -Recurse -Force
+    Write-Host "[OK] Rules synced." -ForegroundColor Green
+}
+
+# 6. Sync settings.json
+if (Test-Path "$HomeClaude\settings.json") {
+    Copy-Item -Path "$HomeClaude\settings.json" -Destination "$ClaudeDir\settings.json" -Force
+    Write-Host "[OK] Settings synced." -ForegroundColor Green
+}
+
+# 7. Git status check & push ke claude02
 git add -A
 $Changes = git status --porcelain
 if ($Changes) {

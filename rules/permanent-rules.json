@@ -1,0 +1,64 @@
+{
+  "version": "1.0.0",
+  "engine": "Rule-Enforcement-Engine",
+  "rules": [
+    {
+      "id": "RULE-FILE-A",
+      "name": "Proteksi File A",
+      "status": "active",
+      "description": "File A (test-file-a.txt) tidak boleh diubah, diedit, ditimpa, atau dihapus.",
+      "targets": [
+        "C:\\Users\\yonat\\test-file-a.txt",
+        "test-file-a.txt"
+      ],
+      "forbidden_tools": [
+        "Write",
+        "Edit",
+        "MultiEdit"
+      ],
+      "terminal_write_patterns": [
+        "(>|>>|Set-Content|Add-Content|Out-File|Remove-Item|del|rm|truncate|echo.*>).*test-file-a\\.txt",
+        "test-file-a\\.txt.*(>|>>|Set-Content|Add-Content|Out-File|Remove-Item|del|rm)"
+      ],
+      "created_at": "2026-10-24T13:45:00Z",
+      "revoked_at": "2026-10-24T13:47:26.9549032+07:00"
+    },
+    {
+      "id": "RULE-PUSH-CLAUDE02-ONLY",
+      "name": "Push Hanya ke Claude02",
+      "status": "active",
+      "description": "Perintah git push hanya diizinkan ke repositori claude02 via sync.ps1.",
+      "targets": [],
+      "forbidden_tools": [],
+      "terminal_write_patterns": [
+        "git\\s+push(?!.*(claude02|sync\\.ps1))"
+      ],
+      "created_at": "2026-10-24T13:45:00Z"
+    },
+    {
+      "id": "RULE-PROTECT-OPENCODE",
+      "name": "Proteksi Arsip Pasif Opencode",
+      "status": "active",
+      "description": "Dilarang keras menulis atau git push pada folder Opencode/memory",
+      "targets": [
+        "C:/Users/yonat/OneDrive/Desktop/Opencode/memory"
+      ],
+      "forbidden_tools": [
+        "Write",
+        "Edit",
+        "MultiEdit"
+      ],
+      "terminal_write_patterns": [
+        ".*Opencode[/]memory.*(git|commit|push|>|Set-Content).*"
+      ]
+    }
+  ],
+  "history": [
+    {
+      "action": "INIT",
+      "rule_id": "ALL",
+      "timestamp": "2026-10-24T13:45:00Z",
+      "note": "Inisialisasi sistem kepatuhan 4 lapis Rule Enforcement Engine"
+    }
+  ]
+}
