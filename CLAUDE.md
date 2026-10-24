@@ -105,3 +105,6 @@ Behavioral guidelines to reduce common LLM coding mistakes:
   - `C:\Users\yonat\OneDrive\Desktop\Opencode\memory`: Diperlakukan sebagai referensi pasif (harta karun data / perpustakaan ilmu). Dilarang menyuntikkan ke core instructions atau mengeksekusi otomatis.
 - **Configuration Repository**:
   - Upstream repo: `https://github.com/yonathan-boop/claude02`.
+  - **Aturan Baku Push Repository**:
+    - Perintah "push" = selalu dan hanya `claude02` (via `C:\Users\yonat\Desktop\Claude\sync.ps1`).
+    - Kamar lain (`Opencode`, dll) = bukan target push. Titik. Dilarang keras push atau commit ke direktori/repo selain `claude02`.
