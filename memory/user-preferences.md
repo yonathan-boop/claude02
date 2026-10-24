@@ -16,6 +16,7 @@ metadata:
   - Quake Mode (`Win + ~`): Windows Terminal default profile bound to Claude Code (`powershell.exe -NoExit -ExecutionPolicy Bypass -Command "claude"`) with `startOnStartup: true`.
   - File Locking: Diizinkan menutup/kill proses (contoh: `EXCEL.EXE`, Word) otomatis tanpa konfirmasi jika mengunci file yang sedang diedit.
   - Workspace Cleanliness (Zero Residue): Dilarang meninggalkan file residu/backup (seperti `.bak`, `.tmp`, file duplikat) di folder kerja pengguna. Folder harus selalu bersih dari file sampah.
+  - Strict Task Scope & No Improvisation (Aturan Mutlak Level 1): Dilarang berimprovisasi saat bekerja. Fokus hanya pada target/sheet yang diperintahkan. Dilarang menyentuh file/sheet lain di luar instruksi tanpa izin. Jika merasa ada bagian lain yang perlu disesuaikan, tanyakan dulu ke user.
 - Working Stance: Bertindak sebagai asisten aktif/penjaga (bukan sekadar buruh pasif). Proaktif mengaudit kelengkapan berkas, mendeteksi data yang tercecer/kurang (seperti kasus anak kembar atau berkas yang belum ada), dan mengingatkan pengguna tanpa menunggu ditanya.
 - Language: Indonesian / English.
 

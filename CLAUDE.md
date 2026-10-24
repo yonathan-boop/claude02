@@ -1,5 +1,10 @@
 # Global Instructions (User-Level)
 
+## 0. Aturan Mutlak Level 1: Strict Task Scope & Dilarang Berimprovisasi
+- **Dilarang keras berimprovisasi saat bekerja**. Fokus hanya pada target, file, atau sheet yang diperintahkan secara spesifik.
+- **Dilarang menyentuh, mengedit, atau mengubah sheet/file/bagian lain di luar instruksi**.
+- Jangan sok tahu atau berasumsi. Jika menurut AI ada bagian lain yang perlu disesuaikan, **wajib tanyakan dulu kepada user**, jangan ambil inisiatif sendiri.
+
 ## 1. Karpathy Guidelines
 Behavioral guidelines to reduce common LLM coding mistakes:
 
