@@ -1,26 +1,42 @@
-# sync.ps1 - Sinkronisasi konfigurasi dan data Claude ke GitHub
+﻿# sync.ps1 - Sinkronisasi konfigurasi Claude 02 ke GitHub
 param (
-    [string]$Message = "Update data Claude: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+    [string]$Message = "Update sistem Claude 02: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 )
 
 $ClaudeDir = $PSScriptRoot
 Set-Location -Path $ClaudeDir
 
-# 1. Sync memory terbaru dari projects ke folder memory/
-$MemorySrc = Join-Path $ClaudeDir "projects\C--Users-yonat\memory"
-$MemoryDst = Join-Path $ClaudeDir "memory"
+$HomeClaude = "$HOME\.claude"
+
+# 1. Sync CLAUDE.md
+if (Test-Path "$HomeClaude\CLAUDE.md") {
+    Copy-Item -Path "$HomeClaude\CLAUDE.md" -Destination "$ClaudeDir\CLAUDE.md" -Force
+}
+
+# 2. Sync agents
+if (Test-Path "$HomeClaude\agents") {
+    Copy-Item -Path "$HomeClaude\agents\*" -Destination "$ClaudeDir\agents" -Recurse -Force
+}
+
+# 3. Sync hooks
+if (Test-Path "$HomeClaude\hooks") {
+    Copy-Item -Path "$HomeClaude\hooks\*" -Destination "$ClaudeDir\hooks" -Recurse -Force
+}
+
+# 4. Sync memory
+$MemorySrc = "$HomeClaude\projects\C--Users-yonat\memory"
 if (Test-Path $MemorySrc) {
-    Copy-Item -Path "$MemorySrc\*" -Destination $MemoryDst -Force
+    Copy-Item -Path "$MemorySrc\*" -Destination "$ClaudeDir\memory" -Force
     Write-Host "[OK] Memory synced." -ForegroundColor Green
 }
 
-# 2. Git status check & push
+# 5. Git status check & push ke claude02
 git add -A
 $Changes = git status --porcelain
 if ($Changes) {
     git commit -m $Message
-    git push origin main
-    Write-Host "[OK] Berhasil push update ke GitHub." -ForegroundColor Green
+    git push -u origin main
+    Write-Host "[OK] Berhasil push update ke https://github.com/yonathan-boop/claude02" -ForegroundColor Green
 } else {
     Write-Host "[INFO] Tidak ada perubahan untuk di-commit." -ForegroundColor Cyan
 }

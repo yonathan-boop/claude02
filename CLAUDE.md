@@ -91,3 +91,16 @@ Behavioral guidelines to reduce common LLM coding mistakes:
 
 
 
+
+---
+
+## 9. Workstation Safety & Workspace Invariants (Claude 02)
+- **Workstation Role**: Host Workstation PC Kerja — AI Generasi ke-4 (All-in Claude Code).
+- **Protected Master Data**:
+  - `C:\RaporServer`: Read-Only mutlak. Dilarang mengedit, menimpa, atau menghapus file langsung tanpa izin eksplisit. Selalu gunakan staging area.
+- **Active Workspaces**:
+  - `E:\Data 06\CO(PARA)DE`: Workspace operasional PARA (`@ 1 Project`, `@ 2 Area`, `@ 3 Resource`, `@ 4 Archieves`).
+- **Passive Reference Archive**:
+  - `C:\Users\yonat\OneDrive\Desktop\Opencode\memory`: Diperlakukan sebagai referensi pasif (harta karun data / perpustakaan ilmu). Dilarang menyuntikkan ke core instructions atau mengeksekusi otomatis.
+- **Configuration Repository**:
+  - Upstream repo: `https://github.com/yonathan-boop/claude02`.
