@@ -85,6 +85,11 @@ metadata:
 
 
 
+- Git & Repo Push Invariant:
+  - Repo kerja & sync resmi HANYA 'C:\Users\yonat\Desktop\Claude' (push via 'sync.ps1' ke upstream 'claude02').
+  - 'C:\Users\yonat\OneDrive\Desktop\Opencode\memory' adalah arsip referensi pasif (read-only mutlak). Dilarang commit/push kecuali diminta eksplisit dengan verifikasi ketat.
+  - Dilarang memberikan respon klise AI (Opsi 1/Opsi 2/minta PAT baru) saat auth git gagal sebelum mengecek kredensial aktif yang sudah ada di workstation.
+
 - Protokol Pergantian Bulan Absensi:
   - Trigger: Setiap pergantian bulan baru (contoh: masuk 1 November).
   - Tindakan 02:
